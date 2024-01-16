@@ -10,10 +10,12 @@ function ageValidation(dateOfBirthday) {
 	const birthday = new Date(dateOfBirthday);
 	const currentDay = new Date();
 	const targetDay = new Date(currentDay.getFullYear() - 14, currentDay.getMonth(), currentDay.getDate());
+	console.log(targetDay);
+	console.log(birthday);
 	return birthday < targetDay;
 }
 
 const birthday = '2009-01-01';
-const birthday2 = '2010-17-01';
+const birthday2 = '2010-01-17';
 console.log(ageValidation(birthday));
 console.log(ageValidation(birthday2));
