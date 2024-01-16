@@ -11,8 +11,6 @@ const users = [
 	{ id: 3, name: 'Данил' },
 	{ id: 4, name: 'Сергей' },
 ];
-const uniqueUsers = [...new Set(users.map(user => user.id))].map(id => {
-	return users.find(user => user.id === id);
-});
+const uniqueUsers = [...new Set(users.map(user => users.find(u => u.id === user.id)))];
 
 console.log(uniqueUsers);

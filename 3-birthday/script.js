@@ -8,17 +8,12 @@ TODO: Необходимо вывести true если > 14 и false если <
 
 function ageValidation(dateOfBirthday) {
 	const birthday = new Date(dateOfBirthday);
-	const now = new Date();
-	const age = now.getFullYear() - birthday.getFullYear();
-
-	return age > 14
-		? true
-		: age === 14
-		? now.getMonth() > birthday.getMonth() ||
-		  (now.getMonth() === birthday.getMonth() && now.getDate() >= birthday.getDate())
-		: false;
+	const currentDay = new Date();
+	const targetDay = new Date(currentDay.getFullYear() - 14, currentDay.getMonth(), currentDay.getDate());
+	return birthday < targetDay;
 }
 
 const birthday = '2009-01-01';
-const birthday2 = '2010-01-01';
+const birthday2 = '2010-17-01';
 console.log(ageValidation(birthday));
+console.log(ageValidation(birthday2));
