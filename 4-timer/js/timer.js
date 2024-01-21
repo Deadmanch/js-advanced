@@ -13,7 +13,7 @@ let interval = setInterval(function countdownTimer() {
 	const currentDay = new Date();
 	const distance = deadline.getTime() - currentDay.getTime();
 	const target = {
-		month: deadline.getUTCMonth() - currentDay.getUTCMonth(),
+		month: Math.floor(distance / (1000 * 60 * 60 * 24 * 30)),
 		date: Math.floor(distance / (1000 * 60 * 60 * 24)),
 		hours: Math.floor((distance / (1000 * 60 * 60)) % 24),
 		minutes: Math.floor((distance / (1000 * 60)) % 60),
