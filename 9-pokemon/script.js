@@ -1,6 +1,6 @@
 'use strict';
 const request = new XMLHttpRequest();
-request.open('GET', 'https://poke2api.co/api/v2/pokemon/ditto');
+request.open('GET', 'https://pokea2pi.co/api/v2/pokemon/ditto');
 request.send();
 request.addEventListener('load', function () {
 	const { abilities } = JSON.parse(this.responseText);
@@ -13,5 +13,5 @@ request.addEventListener('load', function () {
 	});
 });
 request.addEventListener('error', function () {
-	console.log('Ошибка при получении данных');
+	console.log(new Error('Ошибка при получении данных'));
 });
