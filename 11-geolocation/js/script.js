@@ -25,7 +25,7 @@ function getUserCoordinates() {
 		}
 	});
 }
-addEventListener('click', () => {
+page.getLocationBtn.addEventListener('click', () => {
 	getUserCoordinates()
 		.then(coordinates => {
 			page.locationLatitude.innerHTML = `<span>Latitude:</span> ${coordinates.latitude}`;
