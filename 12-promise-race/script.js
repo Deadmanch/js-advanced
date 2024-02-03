@@ -1,21 +1,10 @@
 'use strict';
 
 async function race(promises) {
-	return new Promise(async (resolve, reject) => {
-		let completed = 0;
-		promises.forEach(async promise => {
-			try {
-				const res = await promise;
-				if (completed === 0) {
-					resolve(res);
-				}
-			} catch (e) {
-				if (completed === 0) {
-					completed = 1;
-					reject(e);
-				}
-			}
-		});
+	return new Promise((resolve, reject) => {
+		for (const promise of promises) {
+			promise.then(resolve, reject);
+		}
 	});
 }
 
@@ -23,7 +12,7 @@ async function race(promises) {
 const promises = [
 	new Promise(resolve => setTimeout(resolve, 1000, 'Promise 1 resolved')),
 	new Promise(resolve => setTimeout(resolve, 500, 'Promise 2 resolved')),
-	new Promise((resolve, reject) => setTimeout(reject, 100, 'Promise 3 rejected')),
+	new Promise((resolve, reject) => setTimeout(reject, 5000, 'Promise 3 rejected')),
 ];
 
-console.log(race(promises));
+race(promises).then(data => console.log(data));

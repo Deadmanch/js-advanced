@@ -9,22 +9,22 @@ todo С нажатием любой кнопки счётчик увеличив
 
 const page = {
 	counter: document.querySelector('.counter'),
-	btn: document.querySelectorAll('.btn'),
 	wrapper: document.querySelector('.wrapper'),
 };
-
-page.btn.forEach((button, i) => {
-	button.setAttribute('data-button', i);
+let buttons = [...page.wrapper.children];
+buttons.forEach((button, i) => {
+	if (button.classList.contains('btn')) {
+		button.setAttribute('data-button', i);
+	}
 });
-
 page.wrapper.addEventListener('click', function (event) {
 	const target = event.target;
 	const atr = target.getAttribute('data-button');
 	if (target.classList.contains('btn')) {
 		target.textContent = 'Нажата!';
 		page.counter.textContent++;
-		page.btn.forEach(button => {
-			if (button.getAttribute('data-button') !== atr) {
+		buttons.forEach(button => {
+			if (button.getAttribute('data-button') !== atr && button.classList.contains('btn')) {
 				button.textContent = 'Нажми меня';
 			}
 		});
