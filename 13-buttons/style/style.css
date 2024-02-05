@@ -1,0 +1,51 @@
+html {
+	background: linear-gradient(to right, #1f4037, #99f2c8);
+	font-family: 'Courier New', Courier, monospace;
+}
+
+button {
+	border: none;
+	padding: 0;
+	margin: 0;
+	cursor: pointer;
+	background: none;
+	color: #ffffff;
+}
+
+.wrapper {
+	max-width: 350px;
+	margin: 0 auto;
+}
+.counter {
+	color: #fff;
+	background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+	text-align: center;
+	padding: 30px;
+	margin-bottom: 20px;
+	font-size: 32px;
+}
+.btn {
+	width: 100%;
+	font-size: 16px;
+	font-weight: 600;
+	color: #fff;
+	margin-bottom: 20px;
+	padding: 20px;
+	text-align: center;
+	background-size: 300% 100%;
+	border-radius: 50px;
+	-moz-transition: all 0.4s ease-in-out;
+	-o-transition: all 0.4s ease-in-out;
+	-webkit-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
+	background-image: linear-gradient(to right, #ed6ea0, #ec8c69, #f7186a, #fbb03b);
+	box-shadow: 0 4px 15px 0 rgba(236, 116, 149, 0.75);
+}
+
+.btn:hover {
+	background-position: 100% 0;
+	-moz-transition: all 0.4s ease-in-out;
+	-o-transition: all 0.4s ease-in-out;
+	-webkit-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
+}
